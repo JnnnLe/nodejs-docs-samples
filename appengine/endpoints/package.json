@@ -1,19 +1,36 @@
 {
   "name": "appengine-endpoints",
-  "description": "Endpoints Node.js sample for Google App Engine",
+  "description": "Endpoints Node.js sample for Google App Engine Flexible Environment.",
   "version": "0.0.1",
   "private": true,
-  "license": "Apache Version 2.0",
+  "license": "Apache-2.0",
   "author": "Google Inc.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git"
+  },
+  "cloud": {
+    "msg": "Cannot GET",
+    "code": 404
+  },
   "engines": {
     "node": ">=4.3.2"
   },
   "scripts": {
+    "deploy": "gcloud app deploy",
     "start": "node app.js",
-    "test": "cd ../..; npm run t -- appengine/endpoints/test/*.test.js"
+    "pretest": "samples test install",
+    "unit-test": "ava --verbose test/*.test.js",
+    "system-test": "samples test app",
+    "test": "npm run unit-test && npm run system-test",
+    "e2e-test": "samples test deploy"
   },
   "dependencies": {
-    "express": "4.14.1",
-    "body-parser": "1.16.0"
+    "body-parser": "1.17.1",
+    "express": "4.15.2"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "1.2.0",
+    "ava": "0.19.1"
   }
 }

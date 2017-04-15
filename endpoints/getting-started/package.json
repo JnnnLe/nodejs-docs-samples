@@ -3,17 +3,29 @@
   "description": "Endpoints Node.js sample for Google App Engine",
   "version": "0.0.1",
   "private": true,
-  "license": "Apache Version 2.0",
+  "license": "Apache-2.0",
   "author": "Google Inc.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git"
+  },
   "engines": {
     "node": ">=4.3.2"
   },
   "scripts": {
     "start": "node app.js",
-    "test": "cd ..; npm run t -- endpoints/getting-started/test/*.test.js"
+    "unit-test": "ava -T 20s --verbose test/*.test.js",
+    "test": "npm run system-test"
   },
   "dependencies": {
-    "express": "4.14.1",
-    "body-parser": "1.16.0"
+    "body-parser": "1.17.1",
+    "express": "4.15.2"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "1.2.0",
+    "ava": "0.19.1",
+    "proxyquire": "1.7.11",
+    "sinon": "2.1.0",
+    "supertest": "3.0.0"
   }
 }
