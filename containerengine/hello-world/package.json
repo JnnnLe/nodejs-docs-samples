@@ -24,6 +24,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@google-cloud/nodejs-repo-tools": "1.2.0"
+    "@google-cloud/nodejs-repo-tools": "1.2.1"
   }
 }

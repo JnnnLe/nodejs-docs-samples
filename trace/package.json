@@ -28,6 +28,6 @@
     "got": "6.7.1"
   },
   "devDependencies": {
-    "@google-cloud/nodejs-repo-tools": "1.2.0"
+    "@google-cloud/nodejs-repo-tools": "1.2.1"
   }
 }
